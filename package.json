@@ -1,0 +1,44 @@
+{
+	"name": "better-dotenv-language-support",
+	"displayName": "Better DotEnv Language Support",
+	"description": "Syntax highlighting, linting and intellisence for .benv files",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "benv",
+				"aliases": [
+					"better.env",
+					"benv"
+				],
+				"extensions": [
+					".benv"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "benv",
+				"scopeName": "source.benv",
+				"path": "./syntaxes/benv.tmLanguage.json"
+			},
+			{
+				"scopeName": "markdown.benv.codeblock",
+				"path": "./syntaxes/benv.markdown.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.benv": "benv"
+				}
+			}
+		]
+	}
+}
